@@ -18,8 +18,9 @@
         <ul>
           <li>
 <div class="row p-4" v-for="t in filteredTasks" v-bind:key="t.action">
-          <div class="col-6">{{ t.action }}</div>
-          <div class="col-6">
+          <div class="col-3">{{ t.action }}</div>
+          <div class="col-5"></div>
+          <div class="col-3 ml-4">
             <input type="checkbox" v-model="t.done" class="form-check-input ml-4" />
           </div>
         </div>
@@ -27,14 +28,14 @@
         </ul>
         
       </template>
-      <div class="row py-2">
+      <form class="row py-2">
         <div class="col-10">
           <input v-model="newItemText" class="form-control" required>
         </div>
         <div class="col-2">
-          <button class="btn btn-primary" v-on:click="addNewTodo">Tambah List</button>
+          <button class="btn btn-primary" v-on:click="addNewTodo">[+] Tambah List</button>
         </div>
-      </div>
+      </form>
       <div class="row py-2 mt-2 text-white">
         <div class="col text-center">
           <input
@@ -49,7 +50,7 @@
         </div>
         <div class="col text-center">
           <button class="btn btn-sm btn-warning" v-on:click="deleteCompleted">
-            Delete Completed
+    <font-awesome-icon :icon="['fas','fa-trash-alt']" />
           </button>
         </div>
       </div>
