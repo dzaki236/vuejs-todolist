@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="text-center">
     <h4 class="bg-white text-dark text-center p-2">
-      {{ name }} To Do List
+      {{ name }} To Do List <font-awesome-icon icon="list-alt" /> 
     </h4>
     <div class="container p-4 card">
       <div class="row" v-if="filteredTasks.length == 0">
@@ -15,17 +15,14 @@
           <div class="col-4 font-weight-bold">|</div>
           <div class="col-4 font-weight-bold">Done</div>
         </div>
-        <ul>
-          <li>
 <div class="row p-4" v-for="t in filteredTasks" v-bind:key="t.action">
-          <div class="col-3">{{ t.action }}</div>
+  <div class="col-1" style="font-size:0.4em"> <font-awesome-icon class="mt-2" icon="circle" /> </div>
+          <div class="col-2 pr-5">{{ t.action }}</div>
           <div class="col-5"></div>
           <div class="col-3 ml-4">
             <input type="checkbox" v-model="t.done" class="form-check-input ml-4" />
           </div>
         </div>
-          </li>
-        </ul>
         
       </template>
       <form class="row py-2">
@@ -45,12 +42,12 @@
             id="1"
           />
           <label class="form-check-label text-dark font-weight-bold" for="1">
-            Hide completed tasks
+              <font-awesome-icon icon="eye" /> Hide completed tasks
           </label>
         </div>
         <div class="col text-center">
           <button class="btn btn-sm btn-warning" v-on:click="deleteCompleted">
-    <font-awesome-icon :icon="['fas','fa-trash-alt']" />
+    <font-awesome-icon icon="trash" /> Delete List
           </button>
         </div>
       </div>
